@@ -30,7 +30,7 @@ public class MyInputSystem : SingletonBase<MyInputSystem>
 
 	}
 
-   public void Initialize()
+   public override void Initialize()
 	{
 		beforKeyCode = 0;
 		nowKeyCode = 0;
@@ -38,7 +38,7 @@ public class MyInputSystem : SingletonBase<MyInputSystem>
 		repTime = new float[ (int)MyKey.Max];
 	}
 
-	public void UpdateSub()
+	public override void UpdateSub()
 	{
 		beforKeyCode = nowKeyCode;
 		nowKeyCode = MyKey.None;

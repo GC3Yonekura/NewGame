@@ -11,14 +11,14 @@ public class StateMachine<T> where T : struct
 
 	public int Phase = 0;
 
-	// Œ»İ‚ÌƒXƒe[ƒg
+	// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ãƒˆ
 	public T NowState
 	{
 		get { return nowKey; }
 	}
 
 	/// <summary>
-	/// ‰Šú‰»
+	/// åˆæœŸåŒ–
 	/// </summary>
 	/// <param name="max"></param>
 	public void Initialize( int max )
@@ -27,7 +27,7 @@ public class StateMachine<T> where T : struct
 	}
 
 	/// <summary>
-	/// I—¹ˆ—
+	/// çµ‚äº†å‡¦ç†
 	/// </summary>
 	public void Release()
 	{
@@ -37,7 +37,7 @@ public class StateMachine<T> where T : struct
 	}
 
 	/// <summary>
-	/// ƒXƒe[ƒg’Ç‰Á
+	/// ã‚¹ãƒ†ãƒ¼ãƒˆè¿½åŠ 
 	/// </summary>
 	/// <param name="key"></param>
 	/// <param name="state"></param>
@@ -47,7 +47,7 @@ public class StateMachine<T> where T : struct
 	}
 
 	/// <summary>
-	/// ƒAƒbƒvƒf[ƒg
+	/// ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 	/// </summary>
 	public void UpdateSub()
 	{
@@ -58,7 +58,7 @@ public class StateMachine<T> where T : struct
 	}
 
 	/// <summary>
-	/// ƒXƒe[ƒg•ÏX
+	/// ã‚¹ãƒ†ãƒ¼ãƒˆå¤‰æ›´
 	/// </summary>
 	/// <param name="key"></param>
 	public void ChangeState( T key )

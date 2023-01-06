@@ -5,20 +5,20 @@ using UnityEngine;
 public class SystemMain : SingletonBase<SystemMain>
 {
 	/// <summary>
-	/// ‰‚ß‚Ìˆê‰ñŒÄ‚Î‚ê‚é‚â‚Â
+	/// åˆã‚ã®ä¸€å›å‘¼ã°ã‚Œã‚‹ã‚„ã¤
 	/// </summary>
 	[RuntimeInitializeOnLoadMethod]
-	static void Initialize()
+	static new void Initialize() 
 	{
-		// ƒCƒ“ƒXƒ^ƒ“ƒXì‚Á‚Æ‚­
+		// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œã£ã¨ã
 		_ = SystemMain.Instance;
 
-		// ‚»‚ê‚¼‚ê‚Ì¶¬
+		// ãã‚Œãã‚Œã®ç”Ÿæˆ
 		MyInputSystem.Instance.Initialize();
 	}
 
 	/// <summary>
-	/// Update@Šî–{“I‚É‚Íƒ‹[ƒv‚ÌÅ‰‚ÉŒÄ‚Ô‚±‚Æ
+	/// Updateã€€åŸºæœ¬çš„ã«ã¯ãƒ«ãƒ¼ãƒ—ã®æœ€åˆã«å‘¼ã¶ã“ã¨
 	/// </summary>
 	public void UpdateSub()
 	{

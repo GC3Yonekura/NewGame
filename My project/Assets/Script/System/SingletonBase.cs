@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonBase< T > : MonoBehaviour where T : MonoBehaviour
+public abstract class SingletonBase< T > : MonoBehaviour where T : MonoBehaviour
 {
 	// インスタンス
 	static private T instance;
@@ -15,9 +15,11 @@ public class SingletonBase< T > : MonoBehaviour where T : MonoBehaviour
 			if( instance == null )
 			{
 				// 生成して
-				GameObject = new GameObject(nameof(T), typeof(T));
+				GameObject = new GameObject(typeof(T).Name, typeof(T));
 				instance = GameObject.GetComponent<T>();
-				
+
+				instance.transform.SetParent( SystemMain.instance.transform );
+
 				// 破壊不能に
 				DontDestroyOnLoad(instance);
 			}
@@ -25,5 +27,25 @@ public class SingletonBase< T > : MonoBehaviour where T : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// 初期化
+	/// </summary>
+	virtual public void Initialize()
+	{
+	}
+
+	/// <summary>
+	/// アップデート
+	/// </summary>
+	virtual public void UpdateSub()
+	{
+	}
+
+	/// <summary>
+	/// Release
+	/// </summary>
+	virtual public void Release()
+	{
+	}
 
 }
