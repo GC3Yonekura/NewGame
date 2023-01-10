@@ -47,6 +47,9 @@ public class ObjectBase : MonoBehaviour
 	{
 	}
 
+	/// <summary>
+	/// 終了処理
+	/// </summary>
 	public virtual void Release()
 	{
 		myGameObject = null;

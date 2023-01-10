@@ -8,11 +8,8 @@ public class SystemMain : SingletonBase<SystemMain>
 	/// 初めの一回呼ばれるやつ
 	/// </summary>
 	[RuntimeInitializeOnLoadMethod]
-	static new void Initialize() 
+	public override void Initialize() 
 	{
-		// インスタンス作っとく
-		_ = SystemMain.Instance;
-
 		// それぞれの生成
 		MyInputSystem.Instance.Initialize();
 	}
@@ -20,7 +17,7 @@ public class SystemMain : SingletonBase<SystemMain>
 	/// <summary>
 	/// Update　基本的にはループの最初に呼ぶこと
 	/// </summary>
-	public void UpdateSub()
+	public　override void UpdateSub()
 	{
 		MyInputSystem.Instance.UpdateSub();
 	}

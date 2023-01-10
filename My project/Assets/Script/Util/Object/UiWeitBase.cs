@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UiWeitBase : ObjectBase
 {
-	
 
 	private StateMachine< State > stateMachine = null;
 	enum State
@@ -35,8 +34,4 @@ public class UiWeitBase : ObjectBase
 	{
 		stateMachine.UpdateSub();
 	}
-
-	
-
-
 }
