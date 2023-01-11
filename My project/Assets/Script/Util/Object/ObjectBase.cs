@@ -6,7 +6,8 @@ public class ObjectBase : MonoBehaviour
 {
 	// 初めの一回は取得するようにする
 	private GameObject myGameObject = null;
-	public GameObject GameObject
+	private Transform myTransform = null;
+	public new GameObject gameObject
 	{
 		get {
 			if ( gameObject == null )
@@ -16,12 +17,22 @@ public class ObjectBase : MonoBehaviour
 			return myGameObject;
 		}
 	}
+	public new Transform transform
+	{
+		get {
+			if ( myTransform == null )
+			{
+				myTransform = transform;
+			}
+			return myTransform;
+		}
+	}
 
 	// アクティブ
 	public bool IsActive
 	{
 		get {
-			return myGameObject == null ? false : GameObject.activeSelf;
+			return myGameObject == null ? false : gameObject.activeSelf;
 		}
 		set {
 			if ( myGameObject != null )
@@ -32,6 +43,17 @@ public class ObjectBase : MonoBehaviour
 		}
 	}
 
+	public Vector3 Position
+	{
+		get 
+		{
+			return transform.position;
+		}
+		set 
+		{
+			transform.position = value;
+		}
+	}
 
 	/// <summary>
 	/// 初期化
