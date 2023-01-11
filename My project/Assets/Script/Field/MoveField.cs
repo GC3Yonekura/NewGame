@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveField : MonoBehaviour
+public class MoveField : ObjectMoveBase
 {
     // Start is called before the first frame update
-    [SerializeField] Transform MField;
-  
+
 
     //動くゴミ
     //int counter = 0;
-   float move = 0.01f;
+   [ SerializeField] float move = 0; 
 
     //プレイヤー親子関係
     Rigidbody rb;
@@ -18,7 +17,7 @@ public class MoveField : MonoBehaviour
     [SerializeField] GameObject parentObj;
 
     //米倉
-
+    
     void Start()
     {
         //プレイヤー親子関係
@@ -30,7 +29,7 @@ public class MoveField : MonoBehaviour
     void Update()
     {
         //米倉
-        MField.position = new Vector3(MField.position.x + move,MField.position.y,MField.position.z);
+        X += move;
         //バカの考え
         //transform.Translate(new Vector3(move, 0, 0));
         //counter++;
