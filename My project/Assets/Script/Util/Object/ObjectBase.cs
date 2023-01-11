@@ -12,7 +12,7 @@ public class ObjectBase : MonoBehaviour
 		get {
 			if ( gameObject == null )
 			{
-				myGameObject = gameObject;
+				myGameObject = base.gameObject;
 			}
 			return myGameObject;
 		}
@@ -22,7 +22,7 @@ public class ObjectBase : MonoBehaviour
 		get {
 			if ( myTransform == null )
 			{
-				myTransform = transform;
+				myTransform = base.transform;
 			}
 			return myTransform;
 		}
